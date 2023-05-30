@@ -30,24 +30,3 @@ namespace FotoKiosk
         }
     }
 }
-
-using System.Windows;
-using System.Windows.Controls;
-
-namespace WpfApp
-{
-    public partial class PhotoPage : Page
-    {
-        public PhotoPage()
-        {
-            InitializeComponent();
-        }
-
-        private void GoBack_Click(object sender, RoutedEventArgs e)
-        {
-            // Navigeer terug naar het vorige scherm
-            NavigationService.GoBack();
-        }
-    }
-}
-

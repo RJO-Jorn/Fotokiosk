@@ -3,43 +3,5 @@
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
     xmlns:local="using:FotoKiosk">
-	<Window x:Class="WpfApp.MainWindow"
-        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
-        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-        xmlns:local="clr-namespace:WpfApp"
-        Title="My Navigation App" Height="450" Width="800">
-		<Grid>
-			<Grid.RowDefinitions>
-				<RowDefinition Height="Auto"/>
-				<RowDefinition/>
-			</Grid.RowDefinitions>
-
-			<!-- Foto's -->
-			<StackPanel Grid.Row="0">
-				<Button Content="Toon details" Click="ShowPhotos_Click"/>
-			</StackPanel>
-
-			<!-- Kassa's -->
-			<StackPanel Grid.Row="1" Visibility="Collapsed" x:Name="checkoutPanel">
-				<TextBlock Text="Dit is de kassa."/>
-				<Button Content="Terug" Click="GoBack_Click"/>
-			</StackPanel>
-
-			<!-- Rapportage's -->
-			<StackPanel Grid.Row="1" Visibility="Collapsed" x:Name="reportPanel">
-				<TextBlock Text="Dit is de rapportage."/>
-				<Button Content="Terug" Click="GoBack_Click"/>
-			</StackPanel>
-
-			<!-- Terugzoeken -->
-			<StackPanel Grid.Row="1" Visibility="Collapsed" x:Name="searchPanel">
-				<TextBlock Text="Dit is de zoekpagina."/>
-				<Button Content="Terug" Click="GoBack_Click"/>
-			</StackPanel>
-		</Grid>
-	</Window>
-
-
 
 </Application>
-

@@ -96,36 +96,5 @@ namespace FotoKiosk
             //TODO: Save application state and stop any background activity
             deferral.Complete();
         }
-
-
-        using System.Windows;
-        using System.Windows.Controls;
-
-        namespace WpfApp
-        {
-            public partial class MainWindow : Window
-        {
-            public MainWindow()
-            {
-                InitializeComponent();
-            }
-
-            private void ShowPhotos_Click(object sender, RoutedEventArgs e)
-            {
-                // Navigeer naar PhotoPage.xaml
-                Frame frame = (Frame)Content;
-                frame.Navigate(new PhotoPage());
-            }
-
-            private void GoBack_Click(object sender, RoutedEventArgs e)
-            {
-                // Navigeer terug naar het vorige scherm
-                Frame frame = (Frame)Content;
-                if (frame.CanGoBack)
-                    frame.GoBack();
-            }
-        }
     }
-
-}
 }
