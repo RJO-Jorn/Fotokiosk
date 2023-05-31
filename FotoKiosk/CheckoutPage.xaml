@@ -10,7 +10,70 @@
 
     <ScrollViewer>
         <Grid>
-            
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+            <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center">
+                <TextBlock FontStyle="Italic">Foto-id:</TextBlock>
+                <TextBox Width="800" Margin="0 0 0 20"></TextBox>
+
+                <TextBlock FontStyle="Italic" Margin="0 0 0 20">Product:</TextBlock>
+                <ComboBox Margin="0 0 0 20">
+                    <ComboBoxItem>
+                        Foto 10x15
+                    </ComboBoxItem>
+                    <ComboBoxItem>
+                        Foto 20x30
+                    </ComboBoxItem>
+                    <ComboBoxItem>
+                        Mok met foto
+                    </ComboBoxItem>
+                    <ComboBoxItem>
+                        Sleutelhanger
+                    </ComboBoxItem>
+                    <ComboBoxItem>
+                        T-shirt
+                    </ComboBoxItem>
+                </ComboBox >
+
+                <TextBlock FontStyle="Italic">Aantal:</TextBlock>
+                <TextBox Margin="0 0 0 20"></TextBox>
+
+                <StackPanel Margin="0 0 0 20" Orientation="Horizontal" >
+                    <Button x:Name="AddEl" Click="AddEl_Click" >Toevoegen</Button>
+                    <Button x:Name="ResetEl" Margin="30 0 0 0" Click="ResetEl_Click">Resetten</Button>
+                </StackPanel>
+
+                <TextBox Padding="0 0 0 60" >
+
+                </TextBox>
+            </StackPanel>
+            <StackPanel  Grid.Column="1" VerticalAlignment="Center" HorizontalAlignment="Center" Width="532" Height="240">
+                <TextBlock FontSize="20" FontWeight="Bold" RenderTransformOrigin="0.5,0.5" UseLayoutRounding="False" d:LayoutRounding="Auto">
+                    <TextBlock.RenderTransform>
+                        <CompositeTransform Rotation="0.044"/>
+                    </TextBlock.RenderTransform><Run Text="Prijzen"/></TextBlock>
+            </StackPanel>
+            <StackPanel  Grid.Column="1" VerticalAlignment="Center" HorizontalAlignment="Center" Orientation="Vertical" Width="500">
+                <StackPanel>
+                    <TextBlock Margin="0 0 0 15">Foto 10x15</TextBlock>
+                    <TextBlock Margin="0 0 0 15">Foto 20x30</TextBlock>
+                    <TextBlock Margin="0 0 0 15">Mok met Foto</TextBlock>
+                    <TextBlock Margin="0 0 0 15">Sleutelhanger</TextBlock>
+                    <TextBlock Margin="0 0 0 15">T-shirt</TextBlock>
+
+                </StackPanel>
+            </StackPanel>
+            <StackPanel Grid.Column="1" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="380,0,0,0" Height="175">
+                <TextBlock Margin="0 0 0 20">€2,55</TextBlock>
+                <TextBlock Margin="0 0 0 15">€4,95</TextBlock>
+                <TextBlock Margin="0 0 0 15">€9,95</TextBlock>
+                <TextBlock Margin="0 0 0 15">€6,12</TextBlock>
+                <TextBlock Margin="0 0 0 15">€11,99</TextBlock>
+            </StackPanel>
+
+
         </Grid>
     </ScrollViewer>
 
