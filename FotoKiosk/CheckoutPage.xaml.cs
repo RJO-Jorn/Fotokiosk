@@ -30,7 +30,7 @@ namespace FotoKiosk
 
         private void AddEl_Click(object sender, RoutedEventArgs e)
         {
-
+            
         }
 
         private void ResetEl_Click(object sender, RoutedEventArgs e)
