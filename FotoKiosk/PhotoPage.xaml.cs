@@ -24,9 +24,42 @@ namespace FotoKiosk
             loadPhotos();
         }
 
-        private void loadPhotos()
+        private async void loadPhotos()
         {
-            // TODO
+            var appFolder = Windows.ApplicationModel.Package.Current.InstalledLocation;
+            var fotosFolder = await appFolder.GetFolderAsync("Assets\\Fotos");
+            var dayFolder = await fotosFolder.GetFoldersAsync();
+
+            var now = DateTime.Now;
+            int day = (int)now.DayOfWeek;
+            string today = day.ToString();
+
+
+            string folderDayNumber;
+
+            var pathList = new List<string>();
+
+            foreach ( var folder in dayFolder )
+            {
+                folderDayNumber = folder.Name[0].ToString();
+                if (folderDayNumber == today)
+                {
+                    var fileList = await folder.GetFilesAsync();
+                    foreach(var file in fileList ) {
+                        pathList.Add(file.Path);
+                    }
+                    gvFotos.ItemsSource = pathList;
+                    
+                }
+                
+            }
+            gvFotos.ItemsSource = pathList;
+
+        }
+
+        private void gvFotos_ItemClick(object sender, ItemClickEventArgs e)
+        {
+
         }
     }
 }
