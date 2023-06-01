@@ -10,6 +10,7 @@
 
     <ScrollViewer Background="White">
         <Grid>
+            <TextBlock x:Name="test"></TextBlock>
             <Border>
                 <Grid>
                     <GridView x:Name="gvFotos" IsItemClickEnabled="True" ItemClick="gvFotos_ItemClick" ItemsSource="">
