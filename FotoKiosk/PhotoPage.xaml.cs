@@ -1,6 +1,7 @@
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
+using System.Globalization;
 using System.IO;
 using System.Linq;
 using System.Runtime.InteropServices.WindowsRuntime;
@@ -14,6 +15,7 @@ using Windows.UI.Xaml.Data;
 using Windows.UI.Xaml.Input;
 using Windows.UI.Xaml.Media;
 using Windows.UI.Xaml.Navigation;
+using Windows.UI.Xaml.Shapes;
 
 namespace FotoKiosk
 {
@@ -49,7 +51,27 @@ namespace FotoKiosk
                 {
                     var fileList = await folder.GetFilesAsync();
                     foreach(var file in fileList ) {
-                        pathList.Add(file.Path);
+
+                        var path = file.Path;
+                        string last19 = path.Substring(path.Length - 19);
+                        
+                        string datetimestr = last19.Substring(0, 8);
+                        var parts = datetimestr.Split('_');                                                                                      
+                        var hour = parts[0];
+                        var min = parts[1];
+                        var sec = parts[2];
+                        var timestr = hour +"/"+ min +"/"+ sec;
+                        var format = "HH/mm/ss";
+                        DateTime time;
+                        var timeDT = DateTime.TryParseExact(timestr, format, CultureInfo.InvariantCulture, DateTimeStyles.None, out time);
+
+                        var minTime = now.AddMinutes(-2);
+                        var maxTime = now.AddMinutes(-30);
+                        if(time <= minTime && time >= maxTime)
+                        {
+                            pathList.Add(file.Path);
+                        }
+
                     }
                     gvFotos.ItemsSource = pathList;
                     
