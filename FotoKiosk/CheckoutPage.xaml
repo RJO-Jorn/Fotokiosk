@@ -49,7 +49,7 @@
                     <Button x:Name="ResetEl" Margin="30 0 0 0" Click="ResetEl_Click">Resetten</Button>
                 </StackPanel>
 
-                <TextBox Padding="0 0 0 60" x:Name="EindBedrag" >
+                <TextBox FontWeight="Bold" Padding="0 0 0 60" x:Name="EindBedrag" >
 
                 </TextBox>
             </StackPanel>
@@ -78,7 +78,7 @@
             </StackPanel>
 			<StackPanel Grid.Row="1">
 				<TextBlock FontWeight="Bold">Kassabon</TextBlock>
-				<ListBox x:Name="El">
+				<ListBox x:Name="Kassabon">
 					<ListBoxItem></ListBoxItem>
 				</ListBox>
 

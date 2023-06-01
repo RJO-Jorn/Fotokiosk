@@ -39,18 +39,14 @@ namespace FotoKiosk
                     double productPrice = GetProductPrice(selectedProduct);
                     double totalAmount = productPrice * quantity;
                     EindBedrag.Text = totalAmount.ToString("C");
-                }
-                else
-                {
-                    // Quantity is not a valid integer
-                    // Handle the error accordingly
+                    ListBoxItem receiptItem = new ListBoxItem();
+                    receiptItem.Content = $"{quantity}{selectedProduct}{totalAmount}";
+
+                    // Add the ListBoxItem to the receipt ListBox
+                    KassaBon.Items.Add(receiptItem);
                 }
             }
-            else
-            {
-                // No product is selected
-                // Handle the error accordingly
-            }
+            
         }
 
         private double GetProductPrice(string product)
@@ -75,7 +71,7 @@ namespace FotoKiosk
 
         private void ResetEl_Click(object sender, RoutedEventArgs e)
         {
-
+            EindBedrag.text = string.Empty;
         }
     }
 }
