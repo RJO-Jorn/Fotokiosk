@@ -23,7 +23,7 @@
                 <TextBox Width="800" Margin="0 0 0 20"></TextBox>
 
                 <TextBlock FontStyle="Italic" Margin="0 0 0 20">Product:</TextBlock>
-                <ComboBox Margin="0 0 0 20">
+                <ComboBox x:name="Product" SelectedValuePath="Content" Margin="0 0 0 20">
                     <ComboBoxItem>
                         Foto 10x15
                     </ComboBoxItem>
@@ -42,14 +42,14 @@
                 </ComboBox >
 
                 <TextBlock FontStyle="Italic">Aantal:</TextBlock>
-                <TextBox Margin="0 0 0 20"></TextBox>
+                <TextBox Margin="0 0 0 20" x:name="AantalProduct"></TextBox>
 
                 <StackPanel Margin="0 0 0 20" Orientation="Horizontal" >
                     <Button x:Name="AddEl" Click="AddEl_Click" >Toevoegen</Button>
                     <Button x:Name="ResetEl" Margin="30 0 0 0" Click="ResetEl_Click">Resetten</Button>
                 </StackPanel>
 
-                <TextBox Padding="0 0 0 60" >
+                <TextBox Padding="0 0 0 60" x:name="EindBedrag" >
 
                 </TextBox>
             </StackPanel>
@@ -70,11 +70,11 @@
                 </StackPanel>
             </StackPanel>
             <StackPanel Grid.Column="1" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="380,0,0,0" Height="175">
-                <TextBlock Margin="0 0 0 20">€2,55</TextBlock>
-                <TextBlock Margin="0 0 0 15">€4,95</TextBlock>
-                <TextBlock Margin="0 0 0 15">€9,95</TextBlock>
-                <TextBlock Margin="0 0 0 15">€6,12</TextBlock>
-                <TextBlock Margin="0 0 0 15">€11,99</TextBlock>
+                <TextBlock Margin="0 0 0 20" x:name="fotoSmallPrijs">€2,55</TextBlock>
+                <TextBlock Margin="0 0 0 15" x:name="fotoLargePrijs">€4,95</TextBlock>
+                <TextBlock Margin="0 0 0 15" x:name="MokPrijs">€9,95</TextBlock>
+                <TextBlock Margin="0 0 0 15" x:name="SleutelPrijs">€6,12</TextBlock>
+                <TextBlock Margin="0 0 0 15" x:name="TshirtPrijs">€11,99</TextBlock>
             </StackPanel>
 			<StackPanel Grid.Row="1">
 				<TextBlock FontWeight="Bold">Kassabon</TextBlock>
