@@ -79,7 +79,16 @@
 			<StackPanel Grid.Row="1">
 				<TextBlock FontWeight="Bold">Kassabon</TextBlock>
 				<ListBox x:Name="Kassabon">
-					<ListBoxItem></ListBoxItem>
+					<ListBox.ItemContainerStyle>
+						<Style TargetType="ListBoxItem">
+							<Setter Property="Background" Value="Transparent" />
+							<Style.Triggers>
+								<Trigger Property="IsMouseOver" Value="True">
+									<Setter Property="Background" Value="DarkGray" />
+								</Trigger>
+							</Style.Triggers>
+						</Style>
+					</ListBox.ItemContainerStyle>
 				</ListBox>
 
 
