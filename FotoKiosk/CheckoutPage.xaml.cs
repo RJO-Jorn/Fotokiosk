@@ -18,7 +18,7 @@ using Windows.UI.Xaml.Navigation;
 
 namespace FotoKiosk
 {
-    public sealed partial class CheckoutPage : UserControl
+    public partial class CheckoutPage : UserControl
     {
         public static CheckoutPage Instance;
 

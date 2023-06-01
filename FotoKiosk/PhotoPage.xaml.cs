@@ -6,6 +6,7 @@ using System.Linq;
 using System.Runtime.InteropServices.WindowsRuntime;
 using Windows.Foundation;
 using Windows.Foundation.Collections;
+using Windows.Storage;
 using Windows.UI.Xaml;
 using Windows.UI.Xaml.Controls;
 using Windows.UI.Xaml.Controls.Primitives;
@@ -16,15 +17,17 @@ using Windows.UI.Xaml.Navigation;
 
 namespace FotoKiosk
 {
-    public sealed partial class PhotoPage : UserControl
+    
+    public partial class PhotoPage : UserControl
     {
+
         public PhotoPage()
         {
             this.InitializeComponent();
             loadPhotos();
         }
 
-        private async void loadPhotos()
+        public async void loadPhotos()
         {
             var appFolder = Windows.ApplicationModel.Package.Current.InstalledLocation;
             var fotosFolder = await appFolder.GetFolderAsync("Assets\\Fotos");
@@ -57,8 +60,13 @@ namespace FotoKiosk
 
         }
 
-        private void gvFotos_ItemClick(object sender, ItemClickEventArgs e)
+        public async void gvFotos_ItemClick(object sender, ItemClickEventArgs e)
         {
+            string url = (string)e.ClickedItem;
+            string last8 = url.Substring(url.Length - 8);
+            string itemId = last8.Substring(0, 4);
+
+            CheckoutPage.Instance.photoIdEl.Text = itemId;
 
         }
     }
