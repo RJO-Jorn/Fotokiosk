@@ -9,7 +9,11 @@
     Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
 
     <ScrollViewer>
-        <Grid>
+		<Grid margin="25">
+			<Grid.RowDefinitions>
+				<RowDefinition Height="*"/>
+				<RowDefinition Height="*"/>
+			</Grid.RowDefinitions>
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="*"/>
                 <ColumnDefinition Width="*"/>
@@ -72,8 +76,14 @@
                 <TextBlock Margin="0 0 0 15">€6,12</TextBlock>
                 <TextBlock Margin="0 0 0 15">€11,99</TextBlock>
             </StackPanel>
+			<StackPanel Grid.Row="1">
+				<TextBlock FontWeight="Bold">Kassabon</TextBlock>
+				<ListBox x:Name="El">
+					<ListBoxItem></ListBoxItem>
+				</ListBox>
 
 
+			</StackPanel>
         </Grid>
     </ScrollViewer>
 
