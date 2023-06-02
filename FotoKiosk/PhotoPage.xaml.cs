@@ -5,6 +5,7 @@ using System.Globalization;
 using System.IO;
 using System.Linq;
 using System.Runtime.InteropServices.WindowsRuntime;
+using System.Threading;
 using Windows.Foundation;
 using Windows.Foundation.Collections;
 using Windows.Storage;
@@ -54,6 +55,9 @@ namespace FotoKiosk
 
                         var path = file.Path;
                         string last19 = path.Substring(path.Length - 19);
+                        System.Timers.Timer timer = new System.Timers.Timer();
+                        timer.Interval = 15000;
+                        timer.Start();
                         
                         string datetimestr = last19.Substring(0, 8);
                         var parts = datetimestr.Split('_');                                                                                      
@@ -67,11 +71,14 @@ namespace FotoKiosk
 
                         var minTime = now.AddMinutes(-2);
                         var maxTime = now.AddMinutes(-30);
-                        if(time <= minTime && time >= maxTime)
+                        if (!timer.Enabled)
                         {
-                            pathList.Add(file.Path);
+                            if (time <= minTime && time >= maxTime)
+                            {
+                                pathList.Add(file.Path);
+                            }
+                            timer.Start();
                         }
-
                     }
                     gvFotos.ItemsSource = pathList;
                     
