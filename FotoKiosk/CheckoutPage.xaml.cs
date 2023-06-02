@@ -43,7 +43,7 @@ namespace FotoKiosk
                     receiptItem.Content = $"{quantity}{selectedProduct}{totalAmount}";
 
                     // Add the ListBoxItem to the receipt ListBox
-                    KassaBon.Items.Add(receiptItem);
+
                 }
             }
             
@@ -71,7 +71,7 @@ namespace FotoKiosk
 
         private void ResetEl_Click(object sender, RoutedEventArgs e)
         {
-            EindBedrag.text = string.Empty;
+            EindBedrag.Text = string.Empty;
         }
     }
 }
