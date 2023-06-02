@@ -40,13 +40,6 @@ namespace FotoKiosk
             timer.Elapsed += OnTimedEvent;
             timer.AutoReset = true;
             timer.Enabled = true;
-            var appFolder = Windows.ApplicationModel.Package.Current.InstalledLocation;
-            var fotosFolder = await appFolder.GetFolderAsync("Assets\\Fotos");
-            var dayFolder = await fotosFolder.GetFoldersAsync();
-            var now = DateTime.Now;
-            int day = (int)now.DayOfWeek;
-            string today = day.ToString();
-
 
         }
 
