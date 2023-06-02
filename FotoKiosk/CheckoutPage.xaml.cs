@@ -67,6 +67,22 @@ namespace FotoKiosk
 
             return 0.0; // Default to 0 if the product is not found
         }
+        private void ListBoxItem_MouseEnter(object sender, MouseEventArgs e)
+        {
+            if (sender is ListBoxItem listBoxItem)
+            {
+                listBoxItem.Background = new SolidColorBrush(Colors.DarkGray);
+            }
+        }
+
+        private void ListBoxItem_MouseLeave(object sender, MouseEventArgs e)
+        {
+            if (sender is ListBoxItem listBoxItem)
+            {
+                listBoxItem.Background = new SolidColorBrush(Colors.Transparent);
+            }
+        }
+
 
 
         private void ResetEl_Click(object sender, RoutedEventArgs e)

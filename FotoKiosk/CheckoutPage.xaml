@@ -77,11 +77,18 @@
                 <TextBlock Margin="0 0 0 15" x:Name="TshirtPrijs">€11,99</TextBlock>
             </StackPanel>
 			<StackPanel Grid.Row="1">
-                <TextBlock FontWeight="Bold">Kassabon</TextBlock>
-
-
-            </StackPanel>
-        </Grid>
+				<TextBlock FontWeight="Bold">Kassabon</TextBlock>
+				<ListBox x:Name="KassaBon">
+					<ListBox.ItemContainerStyle>
+						<Style TargetType="ListBoxItem">
+							<Setter Property="Background" Value="Transparent" />
+							<EventSetter Event="MouseEnter" Handler="ListBoxItem_MouseEnter" />
+							<EventSetter Event="MouseLeave" Handler="ListBoxItem_MouseLeave" />
+						</Style>
+					</ListBox.ItemContainerStyle>
+				</ListBox>
+			</StackPanel>
+		</Grid>
     </ScrollViewer>
 
 </UserControl>
