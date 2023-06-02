@@ -39,15 +39,16 @@ namespace FotoKiosk
                     double productPrice = GetProductPrice(selectedProduct);
                     double totalAmount = productPrice * quantity;
                     EindBedrag.Text = totalAmount.ToString("C");
+
                     ListBoxItem receiptItem = new ListBoxItem();
-                    receiptItem.Content = $"{quantity}{selectedProduct}{totalAmount}";
+                    receiptItem.Content = $"{quantity}x {selectedProduct} - {totalAmount:C}";
 
                     // Add the ListBoxItem to the receipt ListBox
-
+                    KassaBon.Items.Add(receiptItem);
                 }
             }
-            
         }
+
 
         private double GetProductPrice(string product)
         {
@@ -67,27 +68,15 @@ namespace FotoKiosk
 
             return 0.0; // Default to 0 if the product is not found
         }
-        private void ListBoxItem_MouseEnter(object sender, MouseEventArgs e)
-        {
-            if (sender is ListBoxItem listBoxItem)
-            {
-                listBoxItem.Background = new SolidColorBrush(Colors.DarkGray);
-            }
-        }
 
-        private void ListBoxItem_MouseLeave(object sender, MouseEventArgs e)
-        {
-            if (sender is ListBoxItem listBoxItem)
-            {
-                listBoxItem.Background = new SolidColorBrush(Colors.Transparent);
-            }
-        }
 
 
 
         private void ResetEl_Click(object sender, RoutedEventArgs e)
         {
             EindBedrag.Text = string.Empty;
+            KassaBon.Items.Clear();
+            AantalProduct.Text = string.Empty;
         }
     }
 }

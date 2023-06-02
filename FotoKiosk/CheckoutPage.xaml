@@ -79,15 +79,11 @@
 			<StackPanel Grid.Row="1">
 				<TextBlock FontWeight="Bold">Kassabon</TextBlock>
 				<ListBox x:Name="KassaBon">
-					<ListBox.ItemContainerStyle>
-						<Style TargetType="ListBoxItem">
-							<Setter Property="Background" Value="Transparent" />
-							<EventSetter Event="MouseEnter" Handler="ListBoxItem_MouseEnter" />
-							<EventSetter Event="MouseLeave" Handler="ListBoxItem_MouseLeave" />
-						</Style>
-					</ListBox.ItemContainerStyle>
+                    <ListBoxItem></ListBoxItem>
+                    
 				</ListBox>
 			</StackPanel>
+
 		</Grid>
     </ScrollViewer>
 
