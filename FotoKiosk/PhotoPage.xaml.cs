@@ -10,6 +10,7 @@ using System.Timers;
 using Windows.Foundation;
 using Windows.Foundation.Collections;
 using Windows.Storage;
+using Windows.UI.Core;
 using Windows.UI.Xaml;
 using Windows.UI.Xaml.Controls;
 using Windows.UI.Xaml.Controls.Primitives;
@@ -39,6 +40,13 @@ namespace FotoKiosk
             timer.Elapsed += OnTimedEvent;
             timer.AutoReset = true;
             timer.Enabled = true;
+            var appFolder = Windows.ApplicationModel.Package.Current.InstalledLocation;
+            var fotosFolder = await appFolder.GetFolderAsync("Assets\\Fotos");
+            var dayFolder = await fotosFolder.GetFoldersAsync();
+            var now = DateTime.Now;
+            int day = (int)now.DayOfWeek;
+            string today = day.ToString();
+
 
         }
 
@@ -87,7 +95,10 @@ namespace FotoKiosk
                     }
                 }
             }
-            gvFotos.ItemsSource = pathList;
+            await Dispatcher.RunAsync(CoreDispatcherPriority.Normal, () =>
+            {
+                gvFotos.ItemsSource = pathList;
+            });
         }
 
         public async void gvFotos_ItemClick(object sender, ItemClickEventArgs e)
