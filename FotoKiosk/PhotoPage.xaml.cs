@@ -36,7 +36,7 @@ namespace FotoKiosk
         public async void loadPhotos()
         {
             System.Timers.Timer timer = new System.Timers.Timer();
-            timer.Interval = 1500;
+            timer.Interval = 15000;
             timer.Elapsed += OnTimedEvent;
             timer.AutoReset = true;
             timer.Enabled = true;
