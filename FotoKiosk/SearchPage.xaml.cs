@@ -63,9 +63,9 @@ namespace FotoKiosk
                         DateTime time;
                         var timeDT = DateTime.TryParseExact(timestr, format, CultureInfo.InvariantCulture, DateTimeStyles.None, out time);
 
-                        var minTime = time1.AddMinutes(-2);
-                        var maxTime = time1.AddMinutes(-30);
-                        if (time <= minTime && time >= maxTime)
+                        var minTime = time1.AddMinutes(-10);
+                        var maxTime = time1.AddMinutes(10);
+                        if (time >= minTime && time <= maxTime)
                         {
                             pathList.Add(file.Path);
                         }
