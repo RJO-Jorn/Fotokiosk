@@ -10,7 +10,44 @@
 
     <ScrollViewer>
         <StackPanel>
-            
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="200"></RowDefinition>
+                    <RowDefinition Height="*"></RowDefinition>
+                </Grid.RowDefinitions>
+                <Border Grid.Row="0">
+                    <StackPanel>
+                        <TextBlock Foreground="Red" FontSize="28" Margin="40" FontWeight="Bold">Fotos worden maximaal 7 dagen bewaard</TextBlock>
+                        <StackPanel Orientation="Horizontal" >
+                            <ComboBox x:Name="comboday" SelectedValuePath="Content" Margin="40">
+                                <ComboBoxItem>Zondag</ComboBoxItem>
+                                <ComboBoxItem>Maandag</ComboBoxItem>
+                                <ComboBoxItem>Dinsdag</ComboBoxItem>
+                                <ComboBoxItem>Woensdag</ComboBoxItem>
+                                <ComboBoxItem>Donderdag</ComboBoxItem>
+                                <ComboBoxItem>Vrijdag</ComboBoxItem>
+                                <ComboBoxItem>Zaterdag</ComboBoxItem>
+                            </ComboBox>
+                            <TimePicker x:Name="HourMinPick" ClockIdentifier="24HourClock"/>
+                            <Button x:Name="search" Click="search_Click" Margin="40" Width="100">Zoek</Button>
+                        </StackPanel>
+                    </StackPanel>
+                </Border>
+                <Border Grid.Row="2">
+                    <Grid>
+                        <GridView x:Name="gvFotos" IsItemClickEnabled="True" ItemClick="gvFotos_ItemClick" ItemsSource="">
+
+                            <GridView.ItemTemplate>
+                                <DataTemplate x:DataType="x:String">
+                                    <StackPanel Padding="60">
+                                        <Image Source="{x:Bind}" MaxWidth="400"></Image>
+                                    </StackPanel>
+                                </DataTemplate>
+                            </GridView.ItemTemplate>
+                        </GridView>
+                    </Grid>
+                </Border>
+            </Grid>
         </StackPanel>
     </ScrollViewer>
 </Page>
