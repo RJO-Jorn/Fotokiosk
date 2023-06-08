@@ -43,7 +43,7 @@
                     <Button x:Name="ResetEl" Margin="30 0 0 0" Click="ResetEl_Click">Resetten</Button>
                 </StackPanel>
 
-                <TextBox FontWeight="Bold" Padding="0 0 0 60" x:Name="EindBedrag" >
+                <TextBox FontWeight="Bold" Padding="0 0 0 60" x:Name="EindBedrag" Content="Eindbedrag: " >
 
                 </TextBox>
             </StackPanel>

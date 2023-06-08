@@ -38,7 +38,8 @@ namespace FotoKiosk
                 {
                     double productPrice = GetProductPrice(selectedProduct);
                     double totalAmount = productPrice * quantity;
-                    EindBedrag.Text = totalAmount.ToString("C");
+                    double totalPrice = totalAmount + totalPrice;
+                    EindBedrag.Text = totalPrice.ToString("C");
 
                     ListBoxItem receiptItem = new ListBoxItem();
                     receiptItem.Content = $"{quantity}x {selectedProduct} - {totalAmount:C}";
