@@ -10,7 +10,48 @@
 
     <ScrollViewer>
         <Grid>
+            <Border>
+                <StackPanel Orientation="Vertical" HorizontalAlignment="Center" VerticalAlignment="Center">
 
+                    <StackPanel Orientation="Horizontal" Margin="0 0 0 75">
+                        <TextBlock>Open een .csv met verkoopcijfers:</TextBlock>
+                        <Button x:Name="FileOpener" Margin="20 0 0 0" Click="FileOpener_Click">Kies een bestand</Button>
+                        <TextBlock Margin="20 0 0 0" x:Name="FileNameEl"></TextBlock>
+                    </StackPanel>
+                    
+                    <StackPanel Visibility="Visible">
+                        <TextBlock Margin="0 0 0 50" FontWeight="ExtraBold" >Dagrapportage Donderdag</TextBlock>
+
+                        <TextBlock>Ratio orders / bezoekers:</TextBlock>
+                        <Grid>
+                            <ProgressBar   Width="600" Height="35" Value="50" Foreground="Green"></ProgressBar>
+                            <TextBlock x:Name="ratioTextEl" VerticalAlignment="Center" HorizontalAlignment="Center">50%</TextBlock>
+                        </Grid>
+
+                        <StackPanel Margin="0 75 0 0">
+                            <TextBlock SelectionChanged="TextBlock_SelectionChanged">Aantal orders:</TextBlock>
+                            <TextBlock x:Name="amountOrdersEl">564</TextBlock>
+                        </StackPanel>
+                    </StackPanel>
+                </StackPanel>
+            </Border>
+            <ListView x:Name="lvProduct" Grid.Row="1">
+                <ListView.ItemTemplate>
+                    <DataTemplate x:DataType="local:Products">
+                        <StackPanel Orientation="Horizontal">
+
+                            <TextBlock Text="{x:Bind Id}" />
+
+                            <TextBlock Text="{x:Bind Productname}" />
+
+                            <TextBlock Text="{x:Bind Amount}" />
+
+                            <TextBlock Text="{x:Bind TotalPrice}" />
+
+                        </StackPanel>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
         </Grid>
     </ScrollViewer>
 </Page>
