@@ -1,6 +1,7 @@
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
+using System.Data;
 using System.Globalization;
 using System.IO;
 using System.Linq;
@@ -27,7 +28,7 @@ namespace FotoKiosk
             this.InitializeComponent();
             Instance = this;
         }
-
+        double totalPrice = 0.0;
         private void AddEl_Click(object sender, RoutedEventArgs e)
         {
             if (Product.SelectedItem is ComboBoxItem selectedProductItem)
@@ -37,8 +38,12 @@ namespace FotoKiosk
                 if (int.TryParse(AantalProduct.Text, out int quantity))
                 {
                     double productPrice = GetProductPrice(selectedProduct);
-                    double totalAmount = productPrice * quantity;
-                    EindBedrag.Text = totalAmount.ToString("C");
+                    double totalAmount = productPrice * quantity;                  
+                    totalPrice += totalAmount;
+
+                    EindBedrag.Text = "Eindbedrag: \n" + totalPrice.ToString("C");
+
+
 
                     ListBoxItem receiptItem = new ListBoxItem();
                     receiptItem.Content = $"{quantity}x {selectedProduct} - {totalAmount:C}";
@@ -75,8 +80,10 @@ namespace FotoKiosk
         private void ResetEl_Click(object sender, RoutedEventArgs e)
         {
             EindBedrag.Text = string.Empty;
+            EindBedrag.Text = "Eindbedrag:";
             KassaBon.Items.Clear();
             AantalProduct.Text = string.Empty;
+            totalPrice = 0.0;
         }
     }
 }

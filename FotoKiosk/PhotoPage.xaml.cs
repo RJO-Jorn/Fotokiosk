@@ -100,7 +100,7 @@ namespace FotoKiosk
             string last8 = url.Substring(url.Length - 8);
             string itemId = last8.Substring(0, 4);
 
-            CheckoutPage.Instance.photoIdEl.Text = itemId;
+            CheckoutPage.Instance.photoIdEl.Text = "Photo ID: \n" + itemId;
 
         }
     }
