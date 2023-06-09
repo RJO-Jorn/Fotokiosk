@@ -42,10 +42,11 @@
                     <Button x:Name="AddEl" Click="AddEl_Click" >Toevoegen</Button>
                     <Button x:Name="ResetEl" Margin="30 0 0 0" Click="ResetEl_Click">Resetten</Button>
                 </StackPanel>
+                <StackPanel BorderBrush="Black" BorderThickness="5">
+                    <TextBlock FontWeight="Bold" Padding="0 0 0 60" x:Name="EindBedrag"> EindeBedrag:</TextBlock>
+                </StackPanel>
 
-                <TextBox FontWeight="Bold" Padding="0 0 0 60" x:Name="EindBedrag" Content="Eindbedrag: " >
 
-                </TextBox>
             </StackPanel>
             <StackPanel  Grid.Column="1" VerticalAlignment="Center" HorizontalAlignment="Center" Width="532" Height="240">
                     <TextBlock FontSize="20" FontWeight="Bold" RenderTransformOrigin="0.5,0.5" UseLayoutRounding="False">
