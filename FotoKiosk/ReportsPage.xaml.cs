@@ -52,13 +52,13 @@ namespace FotoKiosk
                 {
                     using (var reader = new StreamReader(stream))
                     {
-                         using (var csv = new CsvReader(reader, CultureInfo.InvariantCulture))
+                        using (var csv = new CsvReader(reader, CultureInfo.InvariantCulture))
                         {
-                          var records =csv.GetRecords<Products>();
-                          var filepath = file.Path;
-                          var parts = filepath.Split(',');
-                        
-                          var product = new List<Products>();
+                            var records = csv.GetRecords<Products>();
+                            var filepath = file.Path;
+                            var parts = filepath.Split(',');
+
+                            var product = new List<Products>();
                             {
                                 product.Add(new Products
                                 {
@@ -68,16 +68,16 @@ namespace FotoKiosk
                                     TotalPrice = double.Parse(parts[3])
                                 });
                             }
-                         }
+                        }
                     }
                 }
-
             }
         }
 
+
         private void TextBlock_SelectionChanged(object sender, RoutedEventArgs e)
         {
-
+            
         }
     }
 }

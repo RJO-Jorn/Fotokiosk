@@ -15,7 +15,7 @@
 
                     <StackPanel Orientation="Horizontal" Margin="0 0 0 75">
                         <TextBlock>Open een .csv met verkoopcijfers:</TextBlock>
-                        <Button x:Name="FileOpener" Margin="20 0 0 0" Click="FileOpener_Click">Kies een bestand</Button>
+                        <Button x:Name="FileOpener" Click="FileOpener_Click" Margin="20 0 0 0" >Kies bestand</Button>
                         <TextBlock Margin="20 0 0 0" x:Name="FileNameEl"></TextBlock>
                     </StackPanel>
                     
