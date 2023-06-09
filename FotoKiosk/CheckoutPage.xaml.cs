@@ -80,6 +80,7 @@ namespace FotoKiosk
         private void ResetEl_Click(object sender, RoutedEventArgs e)
         {
             EindBedrag.Text = string.Empty;
+            EindBedrag.Text = "Eindbedrag:";
             KassaBon.Items.Clear();
             AantalProduct.Text = string.Empty;
             totalPrice = 0.0;
